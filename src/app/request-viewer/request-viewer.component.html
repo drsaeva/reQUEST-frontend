@@ -1,0 +1,22 @@
+<!-- A sample Request -->
+<div class="card">
+  <!-- - Collapsed Overview -->
+  <div class="card-header" id="{{request.id}}">
+    <button id="headerContent" class="btn btn-link request-pane" data-toggle="collapse" [attr.data-target]="'#div-'+request.id">
+      <div class="row">
+        <div class="col-9 col-md-9 card-preview-left">
+            <h6>{{request.eventName}}</h6><small>{{request.status}}</small>
+        </div>
+        <div class="col-3 col-md-3 card-preview-right">
+            <h6>Start Date</h6><small>{{request.eventStartDate}}</small>
+        </div>
+      </div>
+    </button>
+  </div>
+
+  <!-- Full content -->
+  <div id="div-{{request.id}}" class="collapse show" data-parent="#accordion">
+    <div class="card-body request-pane">
+      {{request.requestor}}
+    </div>
+  </div>
