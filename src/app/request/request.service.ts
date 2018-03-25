@@ -14,9 +14,9 @@ export class RequestService {
   constructor(private http: HttpClient) { }
 
   /** POST: add a new hero to the database */
-  addRequest (request: Request): Observable<Request> {
+/*  addRequest (request: Request): Observable<Request> {
     return this.http.post<Request>(this.retrieveMyRequestsUrl, request, httpOptions)
       .pipe();
-  }
+  }*/
 
 }
