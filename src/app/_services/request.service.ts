@@ -25,7 +25,7 @@ export class RequestService {
     return this.http
       .post(this.requestUrl, JSON.stringify(request), { headers: this.headers })
       .toPromise()
-      .then(res => res.json().data as Request)
+      .then(res => res as Request)
       .catch(this.handleError)
   }
 

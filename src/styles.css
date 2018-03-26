@@ -61,26 +61,6 @@ span {
 
 /* Navigation bar content
 ____________________________*/
-.navbar {
-  position: fixed;
-  background-color: #1e1266;
-  top:0;
-  z-index: 200;
-  overflow: hidden;
-  text-align: center;
-  max-height: 80px;
-  height:100%;
-  left: 6.25%;
-  right: 6.25%;
-}
-.leftlogo {
-  max-width: 20%;
-  height: auto;
-  padding-right: 10%;
-  float: left;
-  position: relative;
-  margin: 10px 15px 15px 10px;
-}
 
 .menu {
   float: left;

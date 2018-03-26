@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Request } from '../request';
-
+import { Request } from '../../request';
 
 @Component({
-  selector: 'app-request-viewer',
-  templateUrl: './request-viewer.component.html',
-  styleUrls: ['./request-viewer.component.css']
+  selector: 'app-request',
+  templateUrl: './request.component.html',
+  styleUrls: ['./request.component.css']
 })
-
-
-export class RequestViewerComponent implements OnInit {
+export class RequestComponent implements OnInit {
   request: Request = {
     id: 1,
     requestor: "John Doe",
@@ -38,8 +35,6 @@ export class RequestViewerComponent implements OnInit {
     passOrFail: ""
 
   };
-
-
   constructor() { }
 
   ngOnInit() {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SubmissionComponent } from '../submission/submission.component';
 
 @Component({
   selector: 'app-navbar',
