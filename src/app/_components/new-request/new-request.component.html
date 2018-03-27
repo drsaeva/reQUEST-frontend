@@ -18,9 +18,11 @@
       <div class="form-group col6" ng-class="{'has-error' : myForm.tediusTask.$invalid && !myForm.tediusTask.$pristine}">
         <input type="email" class="form-control" name="email" placeholder="Email" ng-model="formData.email" required>
       </div>
-      <div class="datepicker">
-        <mat-datepicker #myDatepicker></mat-datepicker>
-      </div>
+      <!--mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field-->
     <button type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid">Submit</button>
     <button type="reset" class="btn btn-success" id="reset-btn" ng-click="reset()">Reset?</button>
   </form>

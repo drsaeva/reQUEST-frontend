@@ -6,6 +6,8 @@ import { Request } from '../../request';
   templateUrl: './request.component.html',
   styleUrls: ['./request.component.css']
 })
+
+
 export class RequestComponent implements OnInit {
   request: Request = {
     id: 1,
@@ -35,6 +37,7 @@ export class RequestComponent implements OnInit {
     passOrFail: ""
 
   };
+
   constructor() { }
 
   ngOnInit() {

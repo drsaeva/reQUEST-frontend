@@ -10,12 +10,13 @@ import { RequestViewerComponent } from '../_components/request-viewer/request-vi
 import { LandingComponent } from '../_components/landing/landing.component';
 import { SubmissionComponent } from '../_components/submission/submission.component';
 import { NavbarComponent } from '../_components/navbar/navbar.component';
-
+import { LoginComponent } from '../_components/login/login.component';
 
 const appRoutes: Routes = [
   { path: 'my-requests', component: MyRequestsComponent },
   { path: 'request-decisions', component: GlobalRequestsComponent },
-  { path: 'landing', component: LandingComponent }
+  { path: 'landing', component: LandingComponent },
+  { path: 'login', component: LoginComponent }
   //TODO make landing page with user info??
   /*{ path: '',
     redirectTo: '/heroes',
