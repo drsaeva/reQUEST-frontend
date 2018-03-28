@@ -7,9 +7,9 @@ import 'rxjs/add/operator/map'
 export class AuthenticationService {
     constructor(private http: HttpClient) { }
 
-    authorize(username: string, password: string) {
+    authorize(email: string, password: string) {
         return this.http.post<any>('/reQUEST/auth',
-                                   {username: username, password: password},
+                                   {email: email, password: password},
                                    {observe: 'response'})
                         .map(res => {
                           this.setjwt(res.headers.get('Authorization'));})
@@ -24,6 +24,6 @@ export class AuthenticationService {
 
     logout() {
         // remove user from local storage to log user out
-        localStorage.removeItem('currentUser');
+        this.jwt = null;
     }
 }
