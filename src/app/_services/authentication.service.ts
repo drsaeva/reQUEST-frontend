@@ -13,8 +13,8 @@ export class AuthenticationService {
                               {observe: 'response'});
     }
 
-    private jwt: String;
-    setJwt(asdf: String) {
+    private jwt: string;
+    setJwt(asdf: string) {
       this.jwt = asdf;
     }
     getJwt() { return this.jwt;}

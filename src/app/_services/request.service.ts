@@ -1,25 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Request } from '../request';
-
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'   //TODO replace or remove as needed
-  })
-};
+import { AuthenticationService } from './authentication.service';
 
 @Injectable()
 export class RequestService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private auth: AuthenticationService) { }
 
   //TODO include jwt token in header
-  private headers = new HttpHeaders({'Content-Type': 'application/json'});
+  private jwt = this.auth.getJwt();
+  private headers = new HttpHeaders({
+                'Content-Type': 'application/json',
+                'Authentication': this.jwt
+                });
 
   //TODO endpoint url should be provided in config file
-  private requestUrl = 'requests';
+  private requestUrl = '/reQUEST/submit';
 
   createRequest(request: Request): Promise<Request> {
     return this.http
