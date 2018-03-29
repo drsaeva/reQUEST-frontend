@@ -17,7 +17,7 @@ export class AuthenticationService {
     setJwt(asdf: string) {
       this.jwt = asdf;
     }
-    getJwt() { return this.jwt;}
+    getJwt() : string { return this.jwt;}
 
     logout() {
         // remove user from local storage to log user out

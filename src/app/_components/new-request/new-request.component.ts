@@ -1,42 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 //import { MatDatepickerModule } from '@angular/material/datepicker';
-interface Request {
-  // general info
-  id: number;
-  requestor: string;
-  requestorId: number;
-  dateSubmitted: string;
-  supervisor: string;
-  deptHead: string;
-  status: number;
-  justification: string;
-  urgent: boolean;
+import { AuthenticationService } from '../../_services/authentication.service';
+import { ReimbursementData } from '../../_static-resources/reimbursement.data';
 
-  // event-specific info
-  eventTypeId: number;
-  eventName: string;
-  eventStartDate: string;
-  eventEndDate: string;
-  eventCost: number;
-  reimbAmt: number;
-  evidenceDirLink: string;
-  evidenceHasApproval: number;
-
-  // grade-specific info
-  gradeFormat: string;
-  passingGrade: string;
-  finalGrade: string;
-  passOrFail: string;
-
-}
 @Component({
   selector: 'app-new-request',
+  providers: [ReimbursementData],
   templateUrl: './new-request.component.html',
   styleUrls: ['./new-request.component.css']
 })
-export class NewRequestComponent implements OnInit, Request {
-	passOrFail: string;
+export class NewRequestComponent implements OnInit {
+  reimbdat;
+  passOrFail: string;
 	finalGrade: string;
 	passingGrade: string;
 	// grade-specific info
@@ -60,14 +36,20 @@ export class NewRequestComponent implements OnInit, Request {
 	// general info
 	id: number;
 	eventName: string;
+
   title: string;
   closeBtnName: string;
   list: any[] = [];
-  constructor(public bsModalRef: BsModalRef) { }
+  constructor(public bsModalRef: BsModalRef,
+              private auth: AuthenticationService,
+              private rsrc : ReimbursementData) {
 
+  }
 
   ngOnInit() {
     this.id = Math.floor(Math.random() * (999999-100000+1))+100000;
+    console.log(this.rsrc.getReimbData()[0].name);
+
   }
 
 }
