@@ -1,3 +1,18 @@
 :host {
   color:#000;
 }
+
+:host .myForm {
+  width: 100%;
+
+}
+
+:host .form-group {
+  max-width: 90%;
+  padding-left: 5%;
+  display:block;
+}
+
+:host .requirement {
+  text-align: center;
+}

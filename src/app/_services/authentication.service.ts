@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 
@@ -9,16 +9,13 @@ export class AuthenticationService {
 
     authorize(email: string, password: string) {
         return this.http.post<any>('/reQUEST/auth',
-                                   {email: email, password: password},
-                                   {observe: 'response'})
-                        .map(res => {
-                          this.setjwt(res.headers.get('Authorization'));})
-                        .subscribe();
+                              {email: email, password: password},
+                              {observe: 'response'});
     }
 
-    private jwt: string;
-    setjwt(jwt: string) {
-      this.jwt = jwt;
+    private jwt: String;
+    setJwt(asdf: String) {
+      this.jwt = asdf;
     }
     getJwt() { return this.jwt;}
 
